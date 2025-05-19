@@ -1,0 +1,129 @@
+@media (max-width: 768px) {
+    /* Упрощаем шапку */
+    header {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    nav {
+        margin: 0;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        width: 100%;
+    }
+    
+    nav a {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+    
+    .header-controls {
+        gap: 10px;
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .login-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    
+    /* Адаптируем основное содержимое */
+    .main-content {
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    /* Перестраиваем форму поиска */
+    .search-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-group {
+        width: 100%;
+    }
+    
+    .search-group input, 
+    .search-group select {
+        padding: 12px;
+    }
+    
+    .search-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    /* Адаптируем модальные окна */
+    .modal {
+        width: 90%;
+        max-width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    /* Адаптируем выбор пассажиров */
+    .passenger-modal {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+    
+    /* Улучшаем отображение популярных направлений */
+    .destinations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .city-image {
+        height: 150px;
+    }
+    
+    /* Улучшаем футер */
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-col {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .footer-container {
+    grid-template-columns: 1fr;
+    }
+    }
+    
+/* Дополнительные улучшения для очень маленьких экранов */
+@media (max-width: 480px) {
+    .search-tabs {
+        font-size: 14px;
+    }
+    
+    .passenger-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .passenger-counter {
+        margin-top: 5px;
+    }
+    
+    .class-options {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

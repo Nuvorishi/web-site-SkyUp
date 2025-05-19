@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SkyUp Airlines</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #4ea8de;
+            font-size: 24px;
+        }
+
+        .input-box {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .input-box label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #bbb;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: #222;
+            color: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-box input:focus {
+            border-color: #4ea8de;
+            outline: none;
+        }
+
+        .login-btn {
+            background-color: #4ea8de;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #3b8bbd;
+            transform: translateY(-3px);
+        }
+
+        .login-btn:active {
+            transform: translateY(1px);
+        }
+
+        .register-link {
+            margin-top: 20px;
+            display: block;
+            color: #bbb;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .register-link:hover {
+            color: #4ea8de;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Вход в аккаунт SkyUp Airlines</h2>
+        <form action="/dashboard" method="post">
+            <div class="input-box">
+                <label for="email">Почта</label>
+                <input type="email" id="email" name="email" placeholder="Введите свою почту" required>
+            </div>
+            <div class="input-box">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Введите свой пароль" required>
+            </div>
+            <button type="submit" class="login-btn">Вход</button>
+        </form>
+        <a href="create_acc.html" class="register-link">Нет аккаунта? Зарегистрируйтесь тут </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyUp Airlines - Дешёвые билеты</title>
+    <link rel="icon" type="image/png" href="D:\лабы(кяр)\зачет1\logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_mobile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Модальные окна -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    
+    <!-- Модальное окно "Мои бронирования" -->
+    <div class="modal" id="bookings-modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Мои бронирования</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p>Здесь вы можете просмотреть и управлять своими текущими и прошлыми бронированиями.</p>
+            <p>Для доступа к бронированиям необходимо войти в систему.</p>
+        </div>
+    </div>
+    
+    <!-- Модальное окно "Партнёры" -->
+    <div class="modal" id="partners-modal" style="width: 500px; max-height: 400px;">
+        <div class="modal-header">
+            <h3 class="modal-title">Наши партнёры</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        
+        <div class="modal-content partners-simple">
+            <!-- Простой список с иконками -->
+            <div class="partner-item">
+                <div class="partner-icon">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <div class="partner-info">
+                    <h4>Turkish Airlines</h4>
+                    <p>Скидка 10% на все рейсы</p>
+                </div>
+            </div>
+    
+            <div class="partner-item">
+                <div class="partner-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="partner-info">
+                    <h4>Hilton Hotels</h4>
+                    <p>Бесплатный завтрак при бронировании</p>
+                </div>
+            </div>
+    
+            <div class="partner-item">
+                <div class="partner-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="partner-info">
+                    <h4>Allianz Insurance</h4>
+                    <p>Страховка от невыезда за 5€</p>
+                </div>
+            </div>
+    
+            <div class="partner-item">
+                <div class="partner-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="partner-info">
+                    <h4>Europcar</h4>
+                    <p>Аренда авто со скидкой 15%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно "Новости" -->
+    <div class="modal" id="news-modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Новости</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p>Последние новости и акции от авиакомпаний и нашего сервиса.</p>
+            <p>Подпишитесь на рассылку, чтобы быть в курсе специальных предложений.</p>
+        </div>
+    </div>
+    
+    <!-- Модальное окно "О нас" -->
+    <div class="modal" id="about-modal">
+
+        <div class="modal-header">
+            <h3 class="modal-title">О компании</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        
+        <div class="modal-content about-content">
+            <!-- Компактный логотип и слоган -->
+            <div class="company-brand">
+                <div class="company-logo">Sky<span>Up</span></div>
+                <div class="company-slogan">Делаем небо ближе</div>
+            </div>
+            
+            <!-- Основная информация -->
+            <div class="about-info">
+                <div class="mission-block">
+                    <i class="fas fa-bullseye"></i>
+                    <p>Наша миссия: доступные перелёты без компромиссов в качестве</p>
+                </div>
+                
+                <!-- Список преимуществ -->
+                <div class="advantages">
+                    <h4><i class="fas fa-check-circle"></i> Наши преимущества:</h4>
+                    <ul>
+                        <li><i class="fas fa-route"></i> Прямые рейсы в 15 стран</li>
+                        <li><i class="fas fa-plane"></i> Современный авиапарк</li>
+                        <li><i class="fas fa-percentage"></i> Честные цены</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal-content about-content">
+            <!-- Блок с миссией -->
+            <div class="mission-card">
+                <div class="mission-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="mission-text">
+                    <h4>Наша миссия</h4>
+                    <p>Делаем небо ближе, а путешествия - доступнее для каждого</p>
+                </div>
+            </div>
+            
+           
+            
+            <!-- Хронология -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">Основание компании</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">10 новых направлений</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">Лидер в СНГ</div>
+                </div>
+            </div>
+            
+            <!-- Кнопка с призывом -->
+            <button class="cta-button">
+                Присоединиться к нам <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Модальное окно "Контакты" -->
+    <div class="modal" id="contacts-modal">
+        <div class="modal-header">
+            <h3 class="modal-title">Контакты</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p>Служба поддержки: support@skyup.com</p>
+            <p>Телефон: +375 (29) 123-45-67</p>
+            <p>Адрес: г. Минск, ул. Аэропортовская, 1</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">SkyUp Airlines</div>
+        <nav>
+            <a data-modal="bookings-modal">Мои бронирования</a>
+            <a data-modal="partners-modal">Партнёры</a>
+            <a data-modal="news-modal">Новости</a>
+            <a data-modal="about-modal">О нас</a>
+            <a data-modal="contacts-modal">Контакты</a>
+        </nav>
+        <div class="header-controls">
+            <div class="currency-selector">
+                <i class="fas fa-globe"></i>
+                <span>BYN</span>
+            </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">
+                <i class="fas fa-moon"></i> <!-- Иконка луны (тёмная тема по умолчанию) -->
+            </button>
+            <a href="login.html" class="login-btn">
+                <i class="fas fa-user"></i>
+                <span>Войти</span>
+            </a>
+        </div>
+      
+    </header>
+
+    <div class="main-content">
+        <h1 class="page-title">Дешёвые билеты на самолёт</h1>
+        
+        <div class="search-section">
+            <div class="search-tabs">
+                <div class="search-tab active">Все билеты</div>
+            </div>
+            <form id="flightSearchForm">
+            <div class="search-row">
+                <div class="search-group">
+                    <label for="departure-city">Откуда</label>
+                    <div class="input-wrapper">
+                        <select id="departure-city">
+                            <option value="" disabled selected>Выберите город</option>
+                            <option value="ALA">Алматы(ALA)</option>
+                            <option value="FRU">Бишкек(FRU)</option>
+                            <option value="KUT">Кутаиси(KUT)</option>
+                            <option value="MSQ">Минск(MSQ)</option>
+                            <option value="MOW">Москва(MOW)</option>
+                            <option value="OMS">Омск(OMS)</option>
+                            <option value="TAS">Ташкент(TAS)</option>
+                            <option value="URC">Урумчи(URC)</option>
+                        </select>
+                        <div class="select-arrow">▼</div>
+                    </div>
+                </div>
+                
+                <div class="search-group">
+                    <label for="arrival-city">Куда</label>
+                    <div class="input-wrapper">
+                        <select id="arrival-city">
+                            <option value="" disabled selected>Выберите город</option>
+                            <option value="ALA">Алматы(ALA)</option>
+                            <option value="FRU">Бишкек(FRU)</option>
+                            <option value="KUT">Кутаиси(KUT)</option>
+                            <option value="MSQ">Минск(MSQ)</option>
+                            <option value="MOW">Москва(MOW)</option>
+                            <option value="OMS">Омск(OMS)</option>
+                            <option value="TAS">Ташкент(TAS)</option>
+                            <option value="URC">Урумчи(URC)</option>
+                        </select>
+                        <div class="select-arrow">▼</div>
+                    </div>
+                </div>
+                
+                <div class="search-group">
+                    <label for="departure-date">Когда</label>
+                    <input type="date" id="departure-date">
+                </div>
+                
+                <div class="search-group">
+                    <label for="return-date">Обратно</label>
+                    <input type="date" id="return-date">
+                </div>
+                
+                <div class="search-group">
+                    <label for="passengers">Пассажиры</label>
+                    <div class="input-wrapper passenger-select-trigger" id="passenger-trigger">
+                        <select id="passengers" style="display: none;">
+                            <option value="1">1 пас., эконом</option>
+                            <option value="2">2 пас., эконом</option>
+                            <option value="1b">1 пас., бизнес</option>
+                        </select>
+                        <div id="passenger-summary">1 пассажир, эконом</div>
+                        <div class="select-arrow">▼</div>
+                        
+                        <div class="passenger-modal" id="passenger-modal">
+                            <div class="passenger-row">
+                                <div class="passenger-label">Взрослые</div>
+                                <div class="passenger-counter">
+                                    <button class="counter-btn" id="adult-minus" type="button" disabled>-</button>
+                                    <span class="counter-value" id="adult-count">1</span>
+                                    <button class="counter-btn" id="adult-plus" type="button">+</button>
+                                </div>
+                            </div>
+                            <div class="passenger-row">
+                                <div class="passenger-label">Дети (2-12 лет)</div>
+                                <div class="passenger-counter">
+                                    <button class="counter-btn" id="child-minus" type="button" disabled>-</button>
+                                    <span class="counter-value" id="child-count">0</span>
+                                    <button class="counter-btn" id="child-plus" type="button">+</button>
+                                </div>
+                            </div>
+                            <div class="passenger-row">
+                                <div class="passenger-label">Младенцы (до 2 лет)</div>
+                                <div class="passenger-counter">
+                                    <button class="counter-btn" id="infant-minus" type="button" disabled>-</button>
+                                    <span class="counter-value" id="infant-count">0</span>
+                                    <button class="counter-btn" id="infant-plus" type="button">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="class-selector">
+                                <div class="class-title">Класс обслуживания:</div>
+                                <div class="class-options">
+                                    <label class="class-option">
+                                        <input type="radio" name="travel-class" class="class-radio" checked>
+                                        <span class="class-checkmark"></span>
+                                        <span class="class-label">Эконом</span>
+                                    </label>
+                                    <label class="class-option">
+                                        <input type="radio" name="travel-class" class="class-radio">
+                                        <span class="class-checkmark"></span>
+                                        <span class="class-label">Бизнес</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <button type="submit" class="search-btn">Найти</button>
+            </form>
+            
+        </div>
+        
+        <h2 class="section-title">Популярные направления</h2>
+        
+        <div class="popular-categories">
+            <div class="category-card">
+                <i class="fas fa-mountain"></i>
+                В горы
+            </div>
+            <div class="category-card">
+                <i class="fas fa-umbrella-beach"></i>
+                На море
+            </div>
+            <div class="category-card">
+                <i class="fas fa-passport"></i>
+                Без визы
+            </div>
+            <div class="category-card">
+                <i class="fas fa-wallet"></i>
+                Бюджетный отдых
+            </div>
+            <div class="category-card">
+                <i class="fas fa-baby"></i>
+                С детьми
+            </div>
+            <div class="category-card">
+                <i class="fas fa-route"></i>
+                По Беларуси
+            </div>
+        </div>
+    </div>
+
+    <div class="advantages-section">
+        <div class="advantages-container">
+            <div class="advantage-item">
+                <div class="advantage-icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <div class="advantage-text">
+                    <h3>Цена известна сразу</h3>
+                    <p>Без наценок и без комиссий</p>
+                </div>
+            </div>
+            
+            <div class="advantage-item">
+                <div class="advantage-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="advantage-text">
+                    <h3>Условия перед глазами</h3>
+                    <p>Цена, багаж, обмен и возврат. Не нужно искать и проверять</p>
+                </div>
+            </div>
+            
+            <div class="advantage-item">
+                <div class="advantage-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="advantage-text">
+                    <h3>Билеты от надёжных партнёров</h3>
+                    <p>Авиакомпаний по России и за границу</p>
+                </div>
+            </div>
+            
+            <div class="advantage-item">
+                <div class="advantage-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div class="advantage-text">
+                    <h3>Поддержка 24/7</h3>
+                    <p>По телефону и в чате. Даже в выходные. И в Новый год</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popular-destinations">
+        <div class="destinations-container">
+            <h2 class="section-title">Находите дешёвые авиабилеты</h2>
+            <p class="section-subtitle">Хотите новых впечатлений? Узнайте, куда летают наши клиенты</p>
+            
+            <div class="destinations-grid">
+    <!-- Блок направления 1 - Алматы -->
+    <div class="destination-card">
+        <div class="city-image" style="background-image: url('https://static.aviasales.com/psgr-v2/ru/almaty/gory_na_fone_Almaty_1_5f6fc4bc3d.jpg');">
+            <div class="city-overlay"></div>
+        </div>
+        <div class="city-info">
+            <div class="city-name">Алматы (ALA)</div>
+            <div class="city-from">из Минск</div>
+        </div>
+    </div>
+    
+    <!-- Блок направления 2 - Бишкек -->
+    <div class="destination-card">
+        <div class="city-image" style="background-image: url('https://tripplanet.ru/wp-content/uploads/asia/kyrgyzstan/bishkek/dostoprimechatelnosti-bishkeka.jpg');">
+            <div class="city-overlay"></div>
+        </div>
+        <div class="city-info">
+            <div class="city-name">Бишкек (FRU)</div>
+            <div class="city-from">из Москва</div>
+        </div>
+    </div>
+    
+    <!-- Блок направления 3 - Кутаиси -->
+    <div class="destination-card">
+        <div class="city-image" style="background-image: url('https://www.advantour.com/img/georgia/kutaisi/kutaisi-georgia1.jpg');">
+            <div class="city-overlay"></div>
+        </div>
+        <div class="city-info">
+            <div class="city-name">Кутаиси (KUT)</div>
+            <div class="city-from">из Ташкент</div>
+        </div>
+    </div>
+    
+    <!-- Блок направления 4 - Минск -->
+    <div class="destination-card">
+        <div class="city-image" style="background-image: url('https://www.belarus.by/dadvimages/001412_704325.jpg');">
+            <div class="city-overlay"></div>
+        </div>
+        <div class="city-info">
+            <div class="city-name">Минск (MSQ)</div>
+            <div class="city-from">из Москва</div>
+        </div>
+    </div>
+    
+    <!-- Блок направления 5 - Москва -->
+    <div class="destination-card">
+        <div class="city-image" style="background-image: url('https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');">
+            <div class="city-overlay"></div>
+        </div>
+        <div class="city-info">
+            <div class="city-name">Москва (MOW)</div>
+            <div class="city-from">из Алматы</div>
+        </div>
+    </div>
+    
+    <!-- Блок направления 6 - Ташкент -->
+    <div class="destination-card">
+        <div class="city-image" style="background-image: url('https://avatars.mds.yandex.net/get-marketcms/1523779/img-2f906025-fb22-4eb8-9618-2e4cae4eb737.jpeg/optimize');">
+            <div class="city-overlay"></div>
+        </div>
+        <div class="city-info">
+            <div class="city-name">Ташкент (TAS)</div>
+            <div class="city-from">из Бишкек</div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Колонка с лого и описанием -->
+            <div class="footer-col footer-about">
+                <div class="footer-logo">SkyUp Airlines</div>
+                <p class="footer-description">
+                    Дешёвые авиабилеты по всему миру. Бронируйте онлайн — экономьте время и деньги!
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+    
+            <!-- Колонка с ссылками -->
+            <div class="footer-col footer-links">
+                <h3 class="footer-title">Информация</h3>
+                <ul class="footer-list">
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Акции и скидки</a></li>
+                    <li><a href="#">Правила перелёта</a></li>
+                    <li><a href="#">Багаж</a></li>
+                    <li><a href="#">Частые вопросы</a></li>
+                </ul>
+            </div>
+    
+            <!-- Колонка с контактами -->
+            <div class="footer-col footer-contacts">
+                <h3 class="footer-title">Контакты</h3>
+                <ul class="footer-list">
+                    <li><i class="fas fa-phone-alt"></i> +375 (29) 123-45-67</li>
+                    <li><i class="fas fa-envelope"></i> info@skyup.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Аэропортовская, 1</li>
+                </ul>
+            </div>
+    
+            <!-- Колонка с подпиской -->
+            <div class="footer-col footer-subscribe">
+                <h3 class="footer-title">Подписаться на акции</h3>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Ваш e-mail" required>
+                    <button type="submit">Подписаться</button>
+                </form>
+                <p class="footer-note">Только лучшие предложения — без спама.</p>
+            </div>
+        </div>
+    
+        <!-- Нижняя часть футера -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                &copy; 2024 SkyUp Airlines. Все права защищены.
+            </div>
+            <div class="footer-payments">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="javascript.js"></script>
+</body>
+</html>
